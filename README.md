@@ -14,6 +14,8 @@
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.12+-blue?logo=python&logoColor=white" alt="Python" />
   <img src="https://img.shields.io/badge/django-5.x-green?logo=django&logoColor=white" alt="Django" />
+  <img src="https://img.shields.io/badge/react-18-61DAFB?logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/vite-5.x-646CFF?logo=vite&logoColor=white" alt="Vite" />
   <img src="https://img.shields.io/badge/celery-5.x-37814A?logo=celery&logoColor=white" alt="Celery" />
   <img src="https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white" alt="PostgreSQL" />
   <img src="https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white" alt="Redis" />
@@ -100,7 +102,10 @@ flowchart TD
 
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
-| **Framework** | Django 5.x + Django Ninja | REST API with OpenAPI auto-docs |
+| **Frontend UI** | React 18 + Vite + TS | High-performance SPA dashboard |
+| **Styling** | Vanilla CSS Modules | Zero-conflict scoped minimalist styling |
+| **State & Data** | Zustand + React Query | State management and live API data syncing |
+| **Backend API** | Django 5.x + Django Ninja | REST API with OpenAPI auto-docs |
 | **Database** | PostgreSQL 16 | JSONB for dynamic payloads |
 | **Queue** | Celery + Redis | Async webhook processing |
 | **Auth** | JWT + API Keys | Dual authentication support |
@@ -112,20 +117,25 @@ flowchart TD
 
 ```
 SEAM/
-├── docker-compose.yml          # 5 services (web, db, redis, worker, beat)
-├── Dockerfile                  # Multi-stage build
-├── Makefile                    # Developer shortcuts
-├── pyproject.toml              # Dependencies + tool config
-├── src/
-│   ├── config/                 # Django settings, Celery, URLs
+├── docker-compose.yml          # Services (web, db, redis, worker, beat)
+├── Dockerfile                  # API Multi-stage build
+├── pyproject.toml              # Python dependencies + tool config
+├── frontend/                   # React Frontend App (Vite + TS)
+│   ├── src/
+│   │   ├── layouts/            # Auth & Dashboard shells
+│   │   ├── pages/              # Workflows, Metrics, Settings
+│   │   ├── components/         # Radix UI + Recharts modules
+│   │   └── store/              # Zustand global state
+├── src/                        # Django Backend App
+│   ├── config/                 # Django settings, Celery, API URLs
 │   ├── apps/
 │   │   ├── accounts/           # User, JWT Auth, API Keys
 │   │   ├── workspaces/         # Multi-tenant workspaces
-│   │   ├── workflows/          # Triggers, Actions, Workflows
+│   │   ├── workflows/          # Triggers, Actions, Workflow Pipeline
 │   │   ├── engine/             # Celery tasks, template renderer
 │   │   └── observability/      # Execution logs, metrics, export
 │   └── common/                 # Middleware, mixins, encryption
-└── tests/                      # pytest suite
+└── tests/                      # backend pytest suite
 ```
 
 ---
