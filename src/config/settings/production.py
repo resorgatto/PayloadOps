@@ -23,8 +23,7 @@ LOGGING = {
     "formatters": {
         "json": {
             "format": (
-                '{"time": "%(asctime)s", "level": "%(levelname)s",'
-                ' "logger": "%(name)s", "message": "%(message)s"}'
+                '{"time": "%(asctime)s", "level": "%(levelname)s", "logger": "%(name)s", "message": "%(message)s"}'
             ),
         },
     },

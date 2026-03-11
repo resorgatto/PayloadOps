@@ -175,9 +175,7 @@ def _execute_single_action(
             # Check for success (2xx)
             if 200 <= response.status_code < 300:
                 execution_log.status = ExecutionLog.Status.SUCCESS
-                execution_log.save(
-                    update_fields=["attempt_number", "response_status_code", "response_body", "status"]
-                )
+                execution_log.save(update_fields=["attempt_number", "response_status_code", "response_body", "status"])
                 logger.info("Action '%s' succeeded with status %d", action.name, response.status_code)
                 return {"success": True, "action": action.name, "status_code": response.status_code}
 
@@ -191,8 +189,11 @@ def _execute_single_action(
                     execution_log.error_message = error_msg
                     execution_log.save(
                         update_fields=[
-                            "attempt_number", "response_status_code",
-                            "response_body", "status", "error_message",
+                            "attempt_number",
+                            "response_status_code",
+                            "response_body",
+                            "status",
+                            "error_message",
                         ]
                     )
                     # Exponential backoff: 2, 4, 8 seconds...

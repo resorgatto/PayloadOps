@@ -62,11 +62,7 @@ def list_execution_logs(request: HttpRequest, filters: ExecutionLogFilterInput =
 def get_execution_log(request: HttpRequest, log_id: str):
     """Get details of a specific execution log."""
     workspace = getattr(request, "workspace", None)
-    log = (
-        ExecutionLog.objects.filter(id=log_id, workspace=workspace)
-        .select_related("workflow")
-        .first()
-    )
+    log = ExecutionLog.objects.filter(id=log_id, workspace=workspace).select_related("workflow").first()
     if log is None:
         return 404, {"detail": "Execution log not found."}
     return 200, log
@@ -135,11 +131,7 @@ def export_logs_xlsx(request: HttpRequest):
     if workspace is None:
         return HttpResponse(status=403)
 
-    logs = (
-        ExecutionLog.objects.for_workspace(workspace)
-        .select_related("workflow")
-        .order_by("-created_at")[:1000]
-    )
+    logs = ExecutionLog.objects.for_workspace(workspace).select_related("workflow").order_by("-created_at")[:1000]
 
     # Create workbook
     wb = openpyxl.Workbook()
@@ -161,16 +153,18 @@ def export_logs_xlsx(request: HttpRequest):
 
     # Data rows
     for log in logs:
-        ws.append([
-            str(log.id),
-            log.workflow.name,
-            log.status,
-            f"{log.attempt_number}/{log.max_attempts}",
-            log.response_status_code or "",
-            log.duration_ms or "",
-            log.error_message[:200] if log.error_message else "",
-            log.created_at.strftime("%Y-%m-%d %H:%M:%S"),
-        ])
+        ws.append(
+            [
+                str(log.id),
+                log.workflow.name,
+                log.status,
+                f"{log.attempt_number}/{log.max_attempts}",
+                log.response_status_code or "",
+                log.duration_ms or "",
+                log.error_message[:200] if log.error_message else "",
+                log.created_at.strftime("%Y-%m-%d %H:%M:%S"),
+            ]
+        )
 
     # Style header
     from openpyxl.styles import Font

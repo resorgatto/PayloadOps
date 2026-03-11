@@ -81,11 +81,7 @@ class APIKeyAuth(HttpBearer):
 
     def authenticate(self, request: HttpRequest, token: str) -> User | None:
         hashed = APIKey.hash_key(token)
-        api_key = (
-            APIKey.objects.select_related("user", "workspace")
-            .filter(hashed_key=hashed, is_active=True)
-            .first()
-        )
+        api_key = APIKey.objects.select_related("user", "workspace").filter(hashed_key=hashed, is_active=True).first()
         if api_key is None:
             return None
 

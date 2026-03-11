@@ -14,9 +14,7 @@ class UserAdmin(BaseUserAdmin):
     list_filter = ("is_verified", "is_staff", "is_active")
     search_fields = ("email", "username", "full_name")
     ordering = ("-created_at",)
-    fieldsets = BaseUserAdmin.fieldsets + (
-        ("Profile", {"fields": ("full_name", "is_verified")}),
-    )
+    fieldsets = BaseUserAdmin.fieldsets + (("Profile", {"fields": ("full_name", "is_verified")}),)
 
 
 @admin.register(APIKey)
