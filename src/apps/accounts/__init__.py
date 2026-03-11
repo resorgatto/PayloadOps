@@ -1,5 +1,5 @@
 """
-PayloadOps — Accounts App
+SEAM — Accounts App
 
 Handles user management, authentication (JWT), and API key generation.
 """

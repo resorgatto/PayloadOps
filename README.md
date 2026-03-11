@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">⚡ PayloadOps</h1>
+  <h1 align="center">⚡ SEAM</h1>
   <p align="center">
     <strong>A multi-tenant SaaS webhook integration hub for event-driven automation</strong>
   </p>
@@ -25,7 +25,7 @@
 
 ## 📋 Overview
 
-**PayloadOps** is an open-source webhook integration platform that allows users to connect different systems through configurable **workflows**. It receives data from a source (webhook), processes it, and forwards it to a destination (external API).
+**SEAM** is an open-source webhook integration platform that allows users to connect different systems through configurable **workflows**. It receives data from a source (webhook), processes it, and forwards it to a destination (external API).
 
 Think of it as a self-hosted, developer-focused alternative to tools like Zapier — but built to demonstrate production-grade backend engineering.
 
@@ -46,8 +46,8 @@ Think of it as a self-hosted, developer-focused alternative to tools like Zapier
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/PayloadOps.git
-cd PayloadOps
+git clone https://github.com/YOUR_USERNAME/SEAM.git
+cd SEAM
 
 # 2. Set up environment
 cp .env.example .env
@@ -62,7 +62,7 @@ docker compose exec web python manage.py seed_demo
 # → http://localhost:8000/api/docs
 ```
 
-**Demo credentials:** `demo@payloadops.dev` / `demo1234`
+**Demo credentials:** `demo@seam.dev` / `demo1234`
 
 ---
 
@@ -75,7 +75,7 @@ flowchart TD
         DST["Destination API\n(Slack, ClickUp, etc.)"]
     end
 
-    subgraph PayloadOps
+    subgraph SEAM
         WH["Webhook Endpoint\n(202 Accepted)"]
         RD["Redis\n(Message Queue)"]
         CW["Celery Worker\n(Async Processing)"]
@@ -111,7 +111,7 @@ flowchart TD
 ### Project Structure
 
 ```
-PayloadOps/
+SEAM/
 ├── docker-compose.yml          # 5 services (web, db, redis, worker, beat)
 ├── Dockerfile                  # Multi-stage build
 ├── Makefile                    # Developer shortcuts

@@ -1,5 +1,5 @@
 """
-PayloadOps — Workflow Models
+SEAM — Workflow Models
 
 Defines the core domain models: Workflow, Trigger, Action, and Credential.
 These models orchestrate the webhook ingestion and outbound action pipeline.

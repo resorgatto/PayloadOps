@@ -1,5 +1,5 @@
 """
-PayloadOps — Accounts API Endpoints
+SEAM — Accounts API Endpoints
 
 Authentication (register, login, refresh) and API key management.
 """

@@ -1,5 +1,5 @@
 """
-PayloadOps — Template Renderer
+SEAM — Template Renderer
 
 Renders body templates by injecting webhook payload variables.
 Supports nested variable access via dot notation (e.g., {{payload.user.name}}).

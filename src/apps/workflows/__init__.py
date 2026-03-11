@@ -1,5 +1,5 @@
 """
-PayloadOps — Workflows App
+SEAM — Workflows App
 
 Core workflow management: Triggers, Actions, and Workflow orchestration.
 """

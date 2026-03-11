@@ -1,5 +1,5 @@
 """
-PayloadOps — Workspace Middleware
+SEAM — Workspace Middleware
 
 Injects the active workspace into every request based on the
 X-Workspace-ID header or API key context, ensuring strict tenant isolation.

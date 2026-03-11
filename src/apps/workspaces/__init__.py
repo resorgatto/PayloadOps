@@ -1,5 +1,5 @@
 """
-PayloadOps — Workspaces App
+SEAM — Workspaces App
 
 Multi-tenant workspace management.
 """

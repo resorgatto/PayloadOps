@@ -1,5 +1,5 @@
 """
-PayloadOps — Authentication Backend
+SEAM — Authentication Backend
 
 JWT token management and API key authentication for Django Ninja.
 """

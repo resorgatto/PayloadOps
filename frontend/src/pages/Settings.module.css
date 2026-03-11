@@ -1,0 +1,304 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.title {
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.025em;
+    margin-bottom: var(--space-1);
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.layout {
+    display: flex;
+    gap: var(--space-8);
+    align-items: flex-start;
+}
+
+/* Sidebar Tabs */
+.sidebar {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: 0.5rem var(--space-3);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.15s;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.navItem:hover {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+}
+
+.navItemActive {
+    background-color: var(--bg-elevated);
+    color: var(--text-primary);
+}
+
+/* Content Area */
+.content {
+    flex: 1;
+    min-width: 0;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sectionTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.sectionDesc {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: -10px;
+}
+
+.primaryButton {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.primaryButton:hover {
+    background-color: var(--primary-hover);
+}
+
+.dangerButtonGhost {
+    background-color: transparent;
+    color: var(--error);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.dangerButtonGhost:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Card / Forms */
+.card {
+    background-color: var(--bg-base);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.inputGroup label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+.actionRow {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-subtle);
+}
+
+/* Table */
+.tableWrapper {
+    background-color: var(--bg-base);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table th {
+    background-color: var(--bg-surface);
+    padding: var(--space-3) var(--space-4);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.table td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border-subtle);
+    vertical-align: middle;
+    font-size: 0.875rem;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.cellBold {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.cellMuted {
+    color: var(--text-muted);
+}
+
+.cellUser {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background-color: var(--bg-elevated);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.badge {
+    background-color: var(--bg-elevated);
+    color: var(--text-primary);
+    padding: 0.125rem 0.5rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Empty State */
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-12) var(--space-4);
+    background-color: var(--bg-base);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    gap: var(--space-3);
+    box-shadow: var(--shadow-sm);
+}
+
+.emptyIcon {
+    color: var(--text-muted);
+    background-color: var(--bg-surface);
+    padding: var(--space-4);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-2);
+}
+
+.emptyState h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.emptyState p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-bottom: var(--space-2);
+}

@@ -1,5 +1,5 @@
 """
-PayloadOps — Accounts Models
+SEAM — Accounts Models
 
 Custom User model and API Key management.
 """
@@ -18,7 +18,7 @@ from common.mixins import BaseModel
 
 class User(AbstractUser):
     """
-    Custom user model for PayloadOps.
+    Custom user model for SEAM.
     Uses UUID as primary key and email as the unique identifier.
     """
 

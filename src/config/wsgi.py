@@ -1,5 +1,5 @@
 """
-PayloadOps — Django WSGI Configuration
+SEAM — Django WSGI Configuration
 """
 
 import os

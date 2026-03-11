@@ -1,5 +1,5 @@
 """
-PayloadOps — Django Ninja API Router
+SEAM — Django Ninja API Router
 
 Central API configuration with versioning and all app routers.
 """
@@ -12,10 +12,10 @@ from apps.workflows.api import router as workflows_router
 from apps.workspaces.api import router as workspaces_router
 
 api = NinjaAPI(
-    title="PayloadOps API",
+    title="SEAM API",
     version="1.0.0",
     description=(
-        "PayloadOps is a multi-tenant SaaS webhook integration hub. "
+        "SEAM is a multi-tenant SaaS webhook integration hub. "
         "Connect systems through configurable workflows that receive, "
         "process, and forward data between services."
     ),

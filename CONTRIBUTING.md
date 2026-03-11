@@ -1,11 +1,11 @@
-# Contributing to PayloadOps
+# Contributing to SEAM
 
 Thank you for your interest in contributing! 🎉
 
 ## Getting Started
 
 1. **Fork** the repository
-2. **Clone** your fork: `git clone https://github.com/YOUR_USERNAME/PayloadOps.git`
+2. **Clone** your fork: `git clone https://github.com/YOUR_USERNAME/SEAM.git`
 3. **Create a branch**: `git checkout -b feature/your-feature-name`
 4. **Set up the environment**: `cp .env.example .env && docker compose up -d`
 5. **Make your changes**

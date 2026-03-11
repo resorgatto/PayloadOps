@@ -1,5 +1,5 @@
 """
-PayloadOps — Observability API Schemas
+SEAM — Observability API Schemas
 """
 
 from __future__ import annotations

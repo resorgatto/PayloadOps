@@ -1,5 +1,5 @@
 """
-PayloadOps — Accounts API Schemas
+SEAM — Accounts API Schemas
 
 Pydantic schemas for authentication and API key management.
 """

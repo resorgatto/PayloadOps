@@ -1,5 +1,5 @@
 """
-PayloadOps — Workflow Admin Configuration
+SEAM — Workflow Admin Configuration
 """
 
 from django.contrib import admin

@@ -1,5 +1,5 @@
 """
-PayloadOps — Celery Application Configuration
+SEAM — Celery Application Configuration
 
 This module configures Celery for asynchronous task processing.
 It supports auto-discovery of tasks across all Django apps.
@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.development")
 
-app = Celery("payloadops")
+app = Celery("seam")
 
 # Load config from Django settings, using the CELERY_ namespace
 app.config_from_object("django.conf:settings", namespace="CELERY")

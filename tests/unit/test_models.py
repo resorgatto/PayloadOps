@@ -1,5 +1,5 @@
 """
-PayloadOps — Unit Tests: Models
+SEAM — Unit Tests: Models
 
 Tests for core model behavior, validation, and business logic.
 """
@@ -23,14 +23,14 @@ from apps.workspaces.models import Workspace, WorkspaceMembership
 @pytest.mark.django_db
 class TestUserModel:
     def test_create_user(self, user):
-        assert user.email == "test@payloadops.dev"
+        assert user.email == "test@seam.dev"
         assert user.username == "testuser"
         assert user.check_password("testpass123")
 
     def test_unique_email(self, user):
         with pytest.raises(IntegrityError):
             User.objects.create_user(
-                email="test@payloadops.dev",
+                email="test@seam.dev",
                 username="another",
                 password="pass",
             )

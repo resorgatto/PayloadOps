@@ -1,5 +1,5 @@
 """
-PayloadOps — Engine App
+SEAM — Engine App
 
 Celery-based asynchronous processing engine for webhook payloads.
 """

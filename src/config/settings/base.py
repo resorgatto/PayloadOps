@@ -1,5 +1,5 @@
 """
-PayloadOps — Base Settings
+SEAM — Base Settings
 
 Common settings shared across all environments.
 """
@@ -94,9 +94,9 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": config("POSTGRES_DB", default="payloadops"),
-        "USER": config("POSTGRES_USER", default="payloadops"),
-        "PASSWORD": config("POSTGRES_PASSWORD", default="payloadops_secret"),
+        "NAME": config("POSTGRES_DB", default="seam"),
+        "USER": config("POSTGRES_USER", default="seam"),
+        "PASSWORD": config("POSTGRES_PASSWORD", default="seam_secret"),
         "HOST": config("POSTGRES_HOST", default="localhost"),
         "PORT": config("POSTGRES_PORT", default="5432"),
         "OPTIONS": {
@@ -173,7 +173,7 @@ CORS_ALLOWED_ORIGINS: list[str] = config(
 ENCRYPTION_KEY: str = config("ENCRYPTION_KEY", default="change-me-generate-a-fernet-key")
 
 # ==============================================================================
-# PAYLOADOPS SETTINGS
+# SEAM SETTINGS
 # ==============================================================================
 
 WEBHOOK_MAX_RETRIES = 3

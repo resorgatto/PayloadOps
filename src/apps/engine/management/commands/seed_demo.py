@@ -1,5 +1,5 @@
 """
-PayloadOps — Seed Demo Data Management Command
+SEAM — Seed Demo Data Management Command
 
 Creates demo data for showcasing the application:
 - 1 demo user with workspace
@@ -16,7 +16,7 @@ from django.core.management.base import BaseCommand
 
 
 class Command(BaseCommand):
-    help = "Seed the database with demo data for PayloadOps"
+    help = "Seed the database with demo data for SEAM"
 
     def handle(self, *args, **options) -> None:
         from apps.accounts.models import User
@@ -24,11 +24,11 @@ class Command(BaseCommand):
         from apps.workflows.models import Action, Trigger, Workflow
         from apps.workspaces.models import Workspace, WorkspaceMembership
 
-        self.stdout.write(self.style.WARNING("🌱 Seeding PayloadOps demo data..."))
+        self.stdout.write(self.style.WARNING("🌱 Seeding SEAM demo data..."))
 
         # ---- User ----
         user, created = User.objects.get_or_create(
-            email="demo@payloadops.dev",
+            email="demo@seam.dev",
             defaults={
                 "username": "demo",
                 "full_name": "Demo User",
@@ -38,7 +38,7 @@ class Command(BaseCommand):
         if created:
             user.set_password("demo1234")
             user.save()
-            self.stdout.write(self.style.SUCCESS("  ✅ Created demo user (demo@payloadops.dev / demo1234)"))
+            self.stdout.write(self.style.SUCCESS("  ✅ Created demo user (demo@seam.dev / demo1234)"))
         else:
             self.stdout.write("  ℹ️  Demo user already exists")
 
@@ -47,7 +47,7 @@ class Command(BaseCommand):
             slug="demo-workspace",
             defaults={
                 "name": "Demo Workspace",
-                "description": "A demo workspace to showcase PayloadOps capabilities",
+                "description": "A demo workspace to showcase SEAM capabilities",
             },
         )
         if created:
@@ -110,7 +110,7 @@ class Command(BaseCommand):
                     "first_name": "{{payload.first_name}}",
                     "last_name": "{{payload.last_name}}",
                     "email": "{{payload.email}}",
-                    "source": "payloadops-webhook",
+                    "source": "seam-webhook",
                 },
             )
             Action.objects.create(
@@ -191,5 +191,5 @@ class Command(BaseCommand):
 
         self.stdout.write(self.style.SUCCESS("\n🎉 Demo data seeded successfully!"))
         self.stdout.write(self.style.WARNING("\n📝 Demo credentials:"))
-        self.stdout.write("   Email: demo@payloadops.dev")
+        self.stdout.write("   Email: demo@seam.dev")
         self.stdout.write("   Password: demo1234")

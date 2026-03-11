@@ -1,5 +1,5 @@
 """
-PayloadOps — Workspace API Endpoints
+SEAM — Workspace API Endpoints
 
 CRUD operations for workspaces and membership management.
 """

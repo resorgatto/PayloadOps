@@ -1,5 +1,5 @@
 [project]
-name = "payloadops"
+name = "seam"
 version = "0.1.0"
 description = "A multi-tenant SaaS webhook integration hub for event-driven automation"
 readme = "README.md"

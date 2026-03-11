@@ -1,5 +1,5 @@
 """
-PayloadOps — Workflow API Schemas
+SEAM — Workflow API Schemas
 """
 
 from __future__ import annotations

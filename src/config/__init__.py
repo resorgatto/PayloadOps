@@ -1,5 +1,5 @@
 """
-PayloadOps — Config Package
+SEAM — Config Package
 
 Ensures Celery app is loaded when Django starts.
 """

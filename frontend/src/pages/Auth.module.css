@@ -1,0 +1,128 @@
+.card {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--bg-base);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-subtle);
+}
+
+.header {
+    margin-bottom: var(--space-6);
+    text-align: center;
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.header p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.error {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--error);
+    padding: var(--space-3);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    margin-bottom: var(--space-4);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.labelRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputGroup label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.forgotLink {
+    font-size: 0.875rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.forgotLink:hover {
+    text-decoration: underline;
+}
+
+.inputGroup input {
+    padding: 0.625rem 0.75rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-strong);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+.inputGroup input::placeholder {
+    color: var(--text-muted);
+}
+
+.submitBtn {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    font-weight: 500;
+    padding: 0.625rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: var(--space-2);
+    border: none;
+}
+
+.submitBtn:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+}
+
+.submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.footerText {
+    text-align: center;
+    margin-top: var(--space-6);
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.footerText a {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.footerText a:hover {
+    text-decoration: underline;
+}

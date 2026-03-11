@@ -1,5 +1,5 @@
 """
-PayloadOps — Observability API Endpoints
+SEAM — Observability API Endpoints
 
 Execution log listing, filtering, metrics, and spreadsheet export.
 """
@@ -187,5 +187,5 @@ def export_logs_xlsx(request: HttpRequest):
         content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     )
     timestamp = datetime.now(tz=UTC).strftime("%Y%m%d_%H%M%S")
-    response["Content-Disposition"] = f'attachment; filename="payloadops_logs_{timestamp}.xlsx"'
+    response["Content-Disposition"] = f'attachment; filename="seam_logs_{timestamp}.xlsx"'
     return response

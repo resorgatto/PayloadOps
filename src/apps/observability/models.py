@@ -1,5 +1,5 @@
 """
-PayloadOps — Execution Log Model
+SEAM — Execution Log Model
 
 Detailed logging for each workflow execution, including the payload
 received, response from the destination, status, and retry information.

@@ -1,5 +1,5 @@
 """
-PayloadOps — Observability Admin Configuration
+SEAM — Observability Admin Configuration
 """
 
 from django.contrib import admin

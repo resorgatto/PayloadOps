@@ -1,5 +1,5 @@
 """
-PayloadOps — Test Configuration
+SEAM — Test Configuration
 
 Shared pytest fixtures and test utilities.
 """
@@ -25,7 +25,7 @@ def request_factory():
 def user(db) -> User:
     """Create a test user."""
     return User.objects.create_user(
-        email="test@payloadops.dev",
+        email="test@seam.dev",
         username="testuser",
         password="testpass123",
         full_name="Test User",
@@ -52,7 +52,7 @@ def workspace(db, user) -> Workspace:
 def second_user(db) -> User:
     """Create a second test user."""
     return User.objects.create_user(
-        email="second@payloadops.dev",
+        email="second@seam.dev",
         username="seconduser",
         password="testpass123",
         full_name="Second User",

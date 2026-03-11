@@ -1,5 +1,5 @@
 """
-PayloadOps — Workflows API Endpoints
+SEAM — Workflows API Endpoints
 
 CRUD for Workflows, Triggers, Actions, Credentials, and Webhook ingestion.
 """

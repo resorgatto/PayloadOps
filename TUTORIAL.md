@@ -1,6 +1,6 @@
-# 📘 PayloadOps — Tutorial Completo
+# 📘 SEAM — Tutorial Completo
 
-> **Roteiro passo a passo** para entender e operar a plataforma PayloadOps.
+> **Roteiro passo a passo** para entender e operar a plataforma SEAM.
 > Cada etapa inclui o comando `curl` equivalente para testar via terminal.
 
 ---
@@ -30,8 +30,8 @@
 
 ```bash
 # Clone o repositório
-git clone https://github.com/SEU_USUARIO/PayloadOps.git
-cd PayloadOps
+git clone https://github.com/SEU_USUARIO/SEAM.git
+cd SEAM
 
 # Copie o arquivo de variáveis de ambiente
 cp .env.example .env
@@ -63,7 +63,7 @@ docker compose exec web python manage.py seed_demo
 curl -X POST http://localhost:8000/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{
-    "email": "dev@payloadops.dev",
+    "email": "dev@seam.dev",
     "username": "dev",
     "password": "minha_senha_segura",
     "full_name": "Desenvolvedor"
@@ -74,14 +74,14 @@ curl -X POST http://localhost:8000/api/auth/register \
 ```json
 {
   "id": "uuid-do-usuario",
-  "email": "dev@payloadops.dev",
+  "email": "dev@seam.dev",
   "username": "dev",
   "full_name": "Desenvolvedor",
   "is_verified": false
 }
 ```
 
-> 💡 Se você rodou `seed_demo`, já existe o usuário `demo@payloadops.dev` / `demo1234`.
+> 💡 Se você rodou `seed_demo`, já existe o usuário `demo@seam.dev` / `demo1234`.
 
 ---
 
@@ -91,7 +91,7 @@ curl -X POST http://localhost:8000/api/auth/register \
 curl -X POST http://localhost:8000/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{
-    "email": "dev@payloadops.dev",
+    "email": "dev@seam.dev",
     "password": "minha_senha_segura"
   }'
 ```
@@ -192,7 +192,7 @@ curl -X POST http://localhost:8000/api/workflows/ \
 
 ## 6. 🔧 Adicionar Actions ao Workflow
 
-Actions são as **ações de saída** — requisições HTTP que o PayloadOps faz quando recebe um webhook. Você pode ter múltiplas actions executadas em sequência.
+Actions são as **ações de saída** — requisições HTTP que o SEAM faz quando recebe um webhook. Você pode ter múltiplas actions executadas em sequência.
 
 ```bash
 curl -X POST http://localhost:8000/api/workflows/uuid-do-workflow/actions \
@@ -348,7 +348,7 @@ curl "http://localhost:8000/api/logs/metrics/summary" \
 Exporte os últimos 1.000 logs em Excel formatado:
 
 ```bash
-curl -o payloadops_logs.xlsx \
+curl -o seam_logs.xlsx \
   "http://localhost:8000/api/logs/export/xlsx" \
   -H "Authorization: Bearer SEU_ACCESS_TOKEN" \
   -H "X-Workspace-ID: uuid-do-workspace"
@@ -464,7 +464,7 @@ Acesse http://localhost:8000/api/docs para:
 # 1. Login
 TOKEN=$(curl -s -X POST http://localhost:8000/api/auth/login \
   -H "Content-Type: application/json" \
-  -d '{"email":"demo@payloadops.dev","password":"demo1234"}' | python -c "import sys,json;print(json.load(sys.stdin)['access_token'])")
+  -d '{"email":"demo@seam.dev","password":"demo1234"}' | python -c "import sys,json;print(json.load(sys.stdin)['access_token'])")
 
 # 2. Listar workspaces
 WS_ID=$(curl -s http://localhost:8000/api/workspaces/ \

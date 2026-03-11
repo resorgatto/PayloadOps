@@ -1,5 +1,5 @@
 """
-PayloadOps — URL Configuration
+SEAM — URL Configuration
 """
 
 from django.contrib import admin
@@ -11,7 +11,7 @@ from config.api import api
 
 def health_check(request):
     """Simple health check endpoint for Docker/load balancer."""
-    return JsonResponse({"status": "healthy", "service": "payloadops"})
+    return JsonResponse({"status": "healthy", "service": "seam"})
 
 
 urlpatterns = [

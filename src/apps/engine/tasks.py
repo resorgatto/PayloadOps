@@ -1,5 +1,5 @@
 """
-PayloadOps — Celery Tasks (Processing Engine)
+SEAM — Celery Tasks (Processing Engine)
 
 Core async tasks for processing webhook payloads:
 1. process_webhook_payload: Main orchestrator — processes a webhook and executes actions

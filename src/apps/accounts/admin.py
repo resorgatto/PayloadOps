@@ -1,5 +1,5 @@
 """
-PayloadOps — Accounts Admin Configuration
+SEAM — Accounts Admin Configuration
 """
 
 from django.contrib import admin

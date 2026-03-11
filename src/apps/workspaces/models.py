@@ -1,5 +1,5 @@
 """
-PayloadOps — Workspace Models
+SEAM — Workspace Models
 
 Multi-tenant workspace management with role-based memberships.
 """

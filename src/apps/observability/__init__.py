@@ -1,5 +1,5 @@
 """
-PayloadOps — Observability App
+SEAM — Observability App
 
 Execution logging and metrics for workflow runs.
 """

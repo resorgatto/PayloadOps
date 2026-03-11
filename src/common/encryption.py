@@ -1,5 +1,5 @@
 """
-PayloadOps — Encryption Utilities
+SEAM — Encryption Utilities
 
 Provides Fernet symmetric encryption for storing sensitive data
 such as API credentials and tokens in the database.

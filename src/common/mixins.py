@@ -1,5 +1,5 @@
 """
-PayloadOps — Tenant Isolation Mixins
+SEAM — Tenant Isolation Mixins
 
 Provides querysets and model mixins that automatically filter
 data by the active workspace, ensuring strict multi-tenant isolation.
@@ -37,7 +37,7 @@ class TenantManager(models.Manager):
 class BaseModel(models.Model):
     """
     Abstract base model with UUID primary key and timestamps.
-    All models in PayloadOps should inherit from this.
+    All models in SEAM should inherit from this.
     """
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
